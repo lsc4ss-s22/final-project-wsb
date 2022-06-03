@@ -82,5 +82,8 @@ Also using this category-aggregated dask dataframe, we can plot the number of po
 Finally, another metadata category we can visualize is the authors. We create an author-aggregated dask dataframe using the function defined previously, then subset the data by nlargest to get the top 10 authors by count of posts. Using hv.Bars, we can then visualize the average sentiment score for these top 10 authors.
 ![bokeh_plot (16)](https://user-images.githubusercontent.com/89881145/171909734-a8839a91-75de-4440-8855-42e28c6de0d8.png)
 
+The code for these plots is available here: https://github.com/lsc4ss-s22/final-project-wsb/blob/main/Visualization.ipynb
+Please note, the interactive bokeh plots do not render in the github viewer due to a quirk in the upload process. The PNGs in the Visualization_PNG folders are static versions of these plots. 
+
 
 
