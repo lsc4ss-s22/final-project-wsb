@@ -83,6 +83,7 @@ Finally, another metadata category we can visualize is the authors. We create an
 ![bokeh_plot (16)](https://user-images.githubusercontent.com/89881145/171909734-a8839a91-75de-4440-8855-42e28c6de0d8.png)
 
 The code for these plots is available here: [Visualization.ipynb](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/Visualization.ipynb)
+
 Please note, the interactive bokeh plots do not render in the github viewer due to a quirk in the upload process. The PNGs in the Visualization_PNG folders are static versions of these plots. 
 
 
