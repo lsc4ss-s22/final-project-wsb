@@ -53,4 +53,6 @@ We then calculate day-wise change in the index and analyze how this change and t
 
 Finally, in order to account for the lag and lead effect that correlation could not capture, we perform granger's causality test between day-wise change in the index and average sentiment, and daily closing value and average sentiment. We only find a significant predictive relationship between closing value and the average sentiment, with a lag of 1. This means that just the previous day's value (lag = 1) is enough to predict the average sentiment of the posts on WSB the next day. This intuitively makes sense because the discourse and discussion on reddit the day after market closes, could be influenced by the previous day's performance. Of course, larger data and more robust analysis is required to make any claims of this kind with high confidence.
 
+The code for corrlelation and causality tests can be found at [LSCProj_Stat_AnalysisPt1.ipynb](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/LSCProject_Stat_AnalysisPt1.ipynb) and [LSCProj_Stat_AnalysisPt2.ipynb](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/LSCProject_Stat_AnalysisPt2.ipynb) respectively. 
+
 # Creation of Interactive Plots (Allison)
