@@ -66,20 +66,20 @@ After these preprocessing steps, we are able to plot the data using Holoviews Ba
 We then can use hv.Curve to plot a time series line graph of the percentage of posts in each setniment category by day. We do so by grouping by day and taking the mean. For legibility purposes, we can smooth the data using a rolling window of 3 in the Dask Dataframe.
 ![bokeh_plot (12)](https://user-images.githubusercontent.com/89881145/171908771-aac9a2e0-1c3d-4176-8e1d-4ed69cfeda48.png)
 
-To analyze these results using the metadata captured, we first concatenate the metadata and sentiment dataframes. Then, we define a function that aggregates the count of posts and average sentiment score for the column specified into a dataframe. 
+To analyze these results using the metadata captured, we first concatenate the metadata and sentiment dask dataframes. Then, we define a function that aggregates the count of posts and average sentiment score for the column specified into a dataframe, grouping by the column name and aggregating count by sum and sentiment score by mean.
 
 First, we create a dataframe aggreagated by date, ensuring that the datatype remains datetime64. After aggregating the data, we can see the number of posts per date and the average sentiment per date. We can graph these features using hv.Curve, smoothing using a rolling window of 3.
 ![bokeh_plot (17)](https://user-images.githubusercontent.com/89881145/171910050-912e9df0-6b92-4ea6-98fb-47b9f96f79b1.png)
 ![bokeh_plot (18)](https://user-images.githubusercontent.com/89881145/171910115-fea2b230-202c-4a29-8854-62cf1b252df2.png)
 
 
-We create another dataframe for the metadata variable "category". After sorting the new dataframe from most negative to most positive average sentiment per category, we use hv.Bars to visualize this data.
+We create another dask dataframe for the metadata variable "category". After sorting the new dataframe from most negative to most positive average sentiment per category, we use hv.Bars to visualize this data.
 ![bokeh_plot (14)](https://user-images.githubusercontent.com/89881145/171909419-541d5dab-db09-436f-bd18-f6d3de0fcea4.png)
 
-Also using this category-aggregated dataframe, we can plot the number of posts per category using hv.Bars.
+Also using this category-aggregated dask dataframe, we can plot the number of posts per category using hv.Bars.
 ![bokeh_plot (15)](https://user-images.githubusercontent.com/89881145/171909546-f0788b82-c7b7-42ad-b518-4bfccedd15ea.png)
 
-Finally, another metadata category we can visualize is the authors. We create an author-aggregated dataframe using the function defined previously, then subset the data by nlargest to get the top 10 authors by count of posts. Using hv.Bars, we can then visualize the average sentiment score for these top 10 authors.
+Finally, another metadata category we can visualize is the authors. We create an author-aggregated dask dataframe using the function defined previously, then subset the data by nlargest to get the top 10 authors by count of posts. Using hv.Bars, we can then visualize the average sentiment score for these top 10 authors.
 ![bokeh_plot (16)](https://user-images.githubusercontent.com/89881145/171909734-a8839a91-75de-4440-8855-42e28c6de0d8.png)
 
 
