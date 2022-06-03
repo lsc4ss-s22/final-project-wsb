@@ -52,7 +52,7 @@ The final dataframe is then saved onto an S3 bucket for future use.
 
 ![Final Dataframe](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/final_df.png)
 
-PySpark Notebook for Sentiment Analysis: [LSC Project Seniment Classification]([url](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/LSCProject_sentiment_classification.ipynb))
+PySpark Notebook for Sentiment Analysis: [LSC Project Seniment Classification](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/LSCProject_sentiment_classification.ipynb)
 
 # Statistical Analysis 
 Once having classified sentiments for each post over the year, we collect data for the performace of the S&P Index over the past year from NASDAQ--which has structured historical data of the index. We then use this data and the sentiment of the posts to see if one of them can be used to extrapolate information about the other. Our objective of doing this was to see if and how sentiment of posts of reddit are reflective of real world phenomena in the financial world. A snapshot of the data can be seen below. <br>
