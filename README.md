@@ -39,8 +39,8 @@ The fact that the rest of the topics center around market activities also sugges
 
 Pyspark Notebook for Topic Modelling: [LSC_Final_Project_LDA.ipynb](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/LSC_Final_Project_LDA.ipynb) <br>
 
-# Sentiment Analysis (Val)
-I implement a sentiment analysis model from John Snow labs to facilitate further statistical analysis of the individual reddit posts. The model in question was a pre-trained BERT model, first trained on a wikipedia corpus before then being fine-tuned to identify sentiment in financial statements. Specifically, the encodings are sentence embeddings from the Bert model. After importing the scraped data from Thiya's S3 bucket, I isolate the 'text' column in the csv before preprocessing the text, removing URLs, long strings of numbers and special characters. 
+# Sentiment Analysis
+We implement a sentiment analysis model from John Snow labs to facilitate further statistical analysis of the individual reddit posts. The model in question was a pre-trained BERT model, first trained on a wikipedia corpus before then being fine-tuned to identify sentiment in financial statements. Specifically, the encodings are sentence embeddings from the Bert model. After importing the scraped data from Thiya's S3 bucket, we isolate the 'text' column in the csv before preprocessing the text, removing URLs, long strings of numbers and special characters. 
 
 ![Post Processed Text.png](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/Post%20processed%20text.png) 
 
