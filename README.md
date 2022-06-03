@@ -102,5 +102,10 @@ The code for these plots is available here: [Visualization.ipynb](https://github
 
 Please note, the interactive bokeh plots do not render in the github viewer due to a quirk in the upload process. The PNGs in the Visualization_PNG folders are static versions of these plots. 
 
+# Plot Interpretation
+Our time-series analysis of user sentiment shows a large spike in positive sentiment on November 2021. It is unclear why this spike occurred although a likely explanation is renewed interest in self-described "meme stocks" such as GME and AMC. We can also see that over time the number of posts has increased but the average sentiment expressed has decreased. This indicates that as the subreddit has become more popular more neutral users have joined in. Initial optimism could thus be a product of self selection as the most optimistic individuals are more willing to engage earlier, with their gains drawing in a larger crowd that is more representative of the general population.
 
+Split by category we can also see that "DD" or Due Diligence type posts are some of the most bullish, whilst companies like Palantir are rated negatively by users. These results could be used to infer biases in favor of certain companies. Interestingly the category with the highest sentiment is Charts, which indicates that visual mediums are primarily being used to convey positive messages. These could come in the form of promoting stock from a particular company, with appealing visuals used to entice audience members. 
+
+Finally, most of the popular authors seem to be neutral in their coverage and thus more measured in their analysis. This could explain their popularity. The next most popular sentiment type is negative, with 3 of the most popular authors having a negative average sentiment. This could mean that more critical perspectives are valued on the subreddit as well, as a counter to the at-times overly exuberant messaging.
 
