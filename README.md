@@ -56,3 +56,31 @@ Finally, in order to account for the lag and lead effect that correlation could 
 The code for corrlelation and causality tests can be found at [LSCProj_Stat_AnalysisPt1.ipynb](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/LSCProject_Stat_AnalysisPt1.ipynb) and [LSCProj_Stat_AnalysisPt2.ipynb](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/LSCProject_Stat_AnalysisPt2.ipynb) respectively. 
 
 # Creation of Interactive Plots (Allison)
+After collecting the meta data and sentiment data from the scraped posts, we are able to visualize the data using Holviews and Bokeh. First, to preprocess the data, we upload the data as a Dask Dataframe and ensure that the datatypes for the variables are correct, changing the 'date' variable to datetime64 and the 'class' variable (denoting the sentiment classification of positve, neutral, and negative) as a categorical variable. We then are able to create classification category dummy variables. Next, we create a function to code the sentiment classifications into integers, with positive being 1, negative beign -1, and neutral being 0.
+
+
+After these preprocessing steps, we are able to plot the data using Holoviews Bars, Curve, and Scatter as necessary. For the first plot, we compare the number of posts in each sentiment category by summing the dummy variable sentiment categories and using hv.Bars.
+
+![bokeh_plot (11)](https://user-images.githubusercontent.com/89881145/171908292-8453a91d-573b-4452-b809-8d1341378d2b.png)
+
+We then can use hv.Curve to plot a time series line graph of the percentage of posts in each setniment category by day. We do so by grouping by day and taking the mean. For legibility purposes, we can smooth the data using a rolling window of 3 in the Dask Dataframe.
+![bokeh_plot (12)](https://user-images.githubusercontent.com/89881145/171908771-aac9a2e0-1c3d-4176-8e1d-4ed69cfeda48.png)
+
+To analyze these results using the metadata captured, we first concatenate the metadata and sentiment dataframes. Then, we define a function that aggregates the count of posts and average sentiment score for the column specified into a dataframe. 
+
+First, we create a dataframe aggreagated by date, ensuring that the datatype remains datetime64. After aggregating the data, we can see the number of posts per date and the average sentiment per date. We can graph these features using hv.Curve, smoothing using a rolling window of 3.
+![bokeh_plot (17)](https://user-images.githubusercontent.com/89881145/171910050-912e9df0-6b92-4ea6-98fb-47b9f96f79b1.png)
+![bokeh_plot (18)](https://user-images.githubusercontent.com/89881145/171910115-fea2b230-202c-4a29-8854-62cf1b252df2.png)
+
+
+We create another dataframe for the metadata variable "category". After sorting the new dataframe from most negative to most positive average sentiment per category, we use hv.Bars to visualize this data.
+![bokeh_plot (14)](https://user-images.githubusercontent.com/89881145/171909419-541d5dab-db09-436f-bd18-f6d3de0fcea4.png)
+
+Also using this category-aggregated dataframe, we can plot the number of posts per category using hv.Bars.
+![bokeh_plot (15)](https://user-images.githubusercontent.com/89881145/171909546-f0788b82-c7b7-42ad-b518-4bfccedd15ea.png)
+
+Finally, another metadata category we can visualize is the authors. We create an author-aggregated dataframe using the function defined previously, then subset the data by nlargest to get the top 10 authors by count of posts. Using hv.Bars, we can then visualize the average sentiment score for these top 10 authors.
+![bokeh_plot (16)](https://user-images.githubusercontent.com/89881145/171909734-a8839a91-75de-4440-8855-42e28c6de0d8.png)
+
+
+
