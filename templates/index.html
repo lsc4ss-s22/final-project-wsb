@@ -1,0 +1,37 @@
+<!--
+Note that you can provide CSS style info in addition to standard HTML:
+-->
+<head>
+  <style>
+    .header {
+      background-color: steelblue;
+      color: white;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 class="header">
+    My Wall Street Bets API
+  </h2>
+  <p>
+    This API provides you with instructions on how to access the table containing posts from r/wallstreetbets. <br>
+    It allows you to index the database based on a date range, author or category.
+  </p>
+  <p>
+    Example Date Query: <code>URL_BASE/api/start_date:2022-01-01&end_date:2022-02-02</code> <br>
+      <li>Dates are provided in %Y-%m-%d format</li> <br>
+    Example Category Query: <code>URL_BASE/api/category:DD</code> <br>
+    <p> Available categories are </p>
+    <li> "Daily Discussion": Daily Discussion Threads </li>
+    <li> "Meme": Meme Post </li>
+    <li> "Gain": User posting stock market gains </li>
+    <li> "Loss": User posting stock market losses </li>
+    <li> "Discussion": Users discussing a topic </li>
+    <li> "Chart": User posting a Chart </li>
+    <li> "DD": User posting Due Diligence on a particular company/market etc. </li>
+    <li> "News": News Articles </li> <br>
+    Example Author Querty: <code>URL_BASE/api/author:FluxRevived</code> <br>
+  </p>
+</body>
