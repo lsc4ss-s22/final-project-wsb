@@ -8,6 +8,8 @@ In early 2021, members of r/wallstreetbets observed that several hedge funds wer
 
 To better understand the influence ordinary investors have on the stock market currently, this research project explores the sentiment of posts within r/wallstreetbets to determine if it correlates with shifts in the S&P 500. We selected r/wallstreetbets due to its large userbase of over 12 million members and proximity to recent stock market activity as illustrated by the GameStop short squeeze. Our project scrapes the 100 most popular posts each day over a period of one year. We then host our scraped data on an API for other researchers to access it. For our analysis, we perform sentiment analysis on the text of each post before correlating it with the closing price and changes in the S&P500. Finally, we generate plots to capture this informationand hosts this plots on an interactive plotly dashboard.
 
+Answering this question has important implications for current scholarship on behavioural economics and behavioural finance. It provides insight into how the manifest emotions of day traders can exert an influence on markets. Additionally, it also provides a measure of the magnitude of this influence. Beyond its findings, this project offers scholars with a repository of reddit posts from r/wallstreetbets and a parallelized framework to use when analyzing the data. For example, the scraper can be used to retrieve posts across a longer time frame for an extended analysis.
+
 # Scraping Posts From r/wallstreetbets (Thiyaghessan)
 I scrape posts from reddit using the Pushift Reddit API that provides users with full functionality for parsing through reddit submissions and comments. Our timeframe for scraping spans 370 days which requires our scraper to access data from 370 unique Pushift URLs. Each API call returns data from about 100 posts in a JSON format, resulting in over 37,000 records for our scraper to parsethrough. A serial implementation is likely to take an excessive amount of time. Thus, I implement an embarassingly parallel solution using a stepfunction to split a batch of urls across 10 lambda workers. Each worker then iterates through its allocated portion of reddit posts and extracts those which possess a body of text valid for sentiment analysis. The data collected from each reddit post is its url, author, user-defined category, text of post, popularity, number of comments and number of upvotes.
 
@@ -17,6 +19,8 @@ My scraper ends up returning about 10,000 posts. This means that over 27,000 pot
 
 # Hosting RDS Using Flask API (Thiyaghessan)
 After storing the relevant data, I create an API using Flask and host it using an AWS EBS Cluster. Detailed instructions for accessing the API are provided in the attached notebooks. The aim of making the dataset accessible via API is to provide other researchers with a  means of working with relevant subsections of our data. For example, our API allows a user to index rows by date, author or category. This provides an easy format for other researchers to navigate r/wallstreetbets posts that contain text in their body. Our scraper has already filtered out non-text posts and deleted posts so the results from our dataset are much cleaner than the results from the Reddit API.
+
+# Topic Modelling
 
 # Sentiment Analysis (Val)
 
