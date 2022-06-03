@@ -27,6 +27,8 @@ After storing the relevant data, I create an API using Flask and host it using a
 Python Script for API: [LSC_Final_Project_API.ipynb](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/LSC_Final_Project_API.py) <br>
 Zip File for AWS EBS: [LSC_Final_Project_API.zip](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/LSC_Final_Project_API.zip) <br>
 
+![LSC_Final_Project_API_ss.png](https://github.com/lsc4ss-s22/final-project-wsb/blob/main/LSC_Final_Project_API_ss.png)
+
 # Topic Modelling
 We perform LDA topic modelling on the data to identify the core themes that guide the evolution of the subreddit and potentially reveal drivers of retail investor sentiment. To implement this algorithm we use Pyspark NLP in an AWS EMR cluster that performs topic modelling on a series of unigrams and trigrams. We also use POS tagging to filter out uninformative sequences of words before fitting the topic model on the combined set of unigrams and trigrams. 
 
